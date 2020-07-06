@@ -16,7 +16,7 @@ public class CustomerController {
         // todo impl
         return new ResponseEntity<>(Customer.builder().build(), HttpStatus.OK);
     }
-    @PutMapping
+    @PostMapping
     public ResponseEntity saveCustomer(@RequestBody Customer customer){
         // todo impl
         return new ResponseEntity(HttpStatus.CREATED);
