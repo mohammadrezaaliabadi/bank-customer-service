@@ -6,12 +6,12 @@ import org.springframework.data.domain.Pageable;
 import java.io.Serializable;
 import java.util.List;
 
-public class CustomerPagedList extends PageImpl<Customer> implements Serializable {
-    public CustomerPagedList(List<Customer> content, Pageable pageable, long total) {
+public class CustomerPagedList extends PageImpl<CustomerDto> implements Serializable {
+    public CustomerPagedList(List<CustomerDto> content, Pageable pageable, long total) {
         super(content, pageable, total);
     }
 
-    public CustomerPagedList(List<Customer> content) {
+    public CustomerPagedList(List<CustomerDto> content) {
         super(content);
     }
 }
