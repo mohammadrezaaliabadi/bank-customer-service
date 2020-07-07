@@ -1,9 +1,6 @@
 package com.example.bankcustomerservice.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
@@ -13,9 +10,11 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.UUID;
 
-@Data
+//@Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Setter
+@Getter
 @Builder
 @Entity
 public class Customer {
@@ -24,8 +23,9 @@ public class Customer {
     @GenericGenerator(name = "UUID",strategy = "org.hibernate.id.UUIDGenerator")
     @Type(type = "org.hibernate.type.UUIDCharType")
     @Column(length = 36, columnDefinition = "varchar(36)", updatable = false, nullable = false)
+    private UUID customerId;
 
-    @org.springframework.data.annotation.Version
+    @Version
     private Long version;
 
     @CreationTimestamp
