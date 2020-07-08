@@ -1,5 +1,5 @@
 package com.example.bankcustomerservice.web.model;
 
-public enum CustomerType {
+public enum CustomerTypeDto {
     USUAl, SPECIAL
 }

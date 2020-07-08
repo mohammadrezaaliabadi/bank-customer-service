@@ -25,8 +25,8 @@ public class Customer {
     @Column(length = 36, columnDefinition = "varchar(36)", updatable = false, nullable = false)
     private UUID customerId;
 
-    @Version
-    private Long version;
+//    @Version
+//    private Long version;
 
     @CreationTimestamp
     @Column(updatable = false)

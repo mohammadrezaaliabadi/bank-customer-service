@@ -1,5 +1,8 @@
 package com.example.bankcustomerservice.web.mapper;
 
+import com.example.bankcustomerservice.domain.Customer;
+import com.example.bankcustomerservice.domain.CustomerType;
+import com.example.bankcustomerservice.web.model.CustomerTypeDto;
 import org.springframework.stereotype.Component;
 
 import java.sql.Timestamp;
