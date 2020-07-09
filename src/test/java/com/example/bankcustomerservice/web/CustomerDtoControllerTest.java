@@ -2,6 +2,7 @@ package com.example.bankcustomerservice.web;
 
 import com.example.bankcustomerservice.domain.Customer;
 import com.example.bankcustomerservice.repositories.CustomerRepository;
+import com.example.bankcustomerservice.services.CustomerService;
 import com.example.bankcustomerservice.web.controller.CustomerController;
 import com.example.bankcustomerservice.web.model.CustomerDto;
 import com.example.bankcustomerservice.web.model.CustomerTypeDto;
@@ -46,12 +47,11 @@ public class CustomerDtoControllerTest {
     ObjectMapper objectMapper;
 
     @MockBean
-    CustomerRepository customerRepository;
+    CustomerService customerService;
 
     @Test
     public void getCustomerById() throws Exception {
-
-        given(customerRepository.findById(any())).willReturn(Optional.of(Customer.builder().build()));
+        given(customerService.getById(any(),any())).willReturn(getValidCustomer());
         mockMvc.perform(get("/api/v1/customer/{customerId}", UUID.randomUUID().toString())
                 .param("name", "ali")
                 .accept(MediaType.APPLICATION_JSON))

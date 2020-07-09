@@ -4,7 +4,6 @@ import com.example.bankcustomerservice.domain.Customer;
 import com.example.bankcustomerservice.web.model.CustomerDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.springframework.stereotype.Component;
 
 @Mapper(uses = DateMapper.class,componentModel = "spring")
 public interface CustomerMapper {
